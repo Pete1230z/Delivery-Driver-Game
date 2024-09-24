@@ -13,6 +13,7 @@ public class Driver : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //f is to denote that is a float
+        transform.Rotate(0, 0, 0.1f);
     }
 }
