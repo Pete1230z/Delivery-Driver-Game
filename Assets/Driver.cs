@@ -15,5 +15,6 @@ public class Driver : MonoBehaviour
     {
         //f is to denote that is a float
         transform.Rotate(0, 0, 0.1f);
+        transform.Translate(0, 0.01f, 0);
     }
 }
