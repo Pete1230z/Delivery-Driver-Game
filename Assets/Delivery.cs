@@ -10,6 +10,10 @@ public class Delivery : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        Debug.Log("Macy you are speeding up!");
+        if (other.tag == "Package") {
+            Debug.Log("Package picked up!");
+        } else if (other.tag == "Customer") {
+            Debug.Log("Package delivered!");
+        }
     }
 }
