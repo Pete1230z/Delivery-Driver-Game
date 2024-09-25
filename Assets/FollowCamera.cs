@@ -10,8 +10,10 @@ public class FollowCamera : MonoBehaviour
     //this things position (camera) should be the same as the car's position
 
     // Update is called once per frame
-    void Update()
+    //LateUpdate ensures the camera smoothly follows the car
+    void LateUpdate()
     {
-        transform.position = 
+        //Set the position of this object (camera) to be the same as the thingToFollow plus some offset on the z axis
+        transform.position = thingToFollow.transform.position + new Vector3(0, 0, -10);
     }
 }
