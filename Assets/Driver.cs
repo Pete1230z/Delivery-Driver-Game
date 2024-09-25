@@ -19,10 +19,14 @@ public class Driver : MonoBehaviour
     {
         //variable goes in Update() so that it is updated every frame
         //Multiple by steerSpeed to make the steering more responsive to user input
-        float steerAmount = Input.GetAxis("Horizontal") * steerSpeed;
+        //Time.deltaTime is to make the steering speed consistent across different frame rates
+        float steerAmount = Input.GetAxis("Horizontal") * steerSpeed* Time.deltaTime;
+
         //moveAmount is the amount of movement in the forward direction
         //multiplied by moveSpeed to make the movement more responsive to user input
-        float moveAmount = Input.GetAxis("Vertical") * moveSpeed;
+        //Time.deltaTime is to make the steering speed consistent across different frame rates
+        float moveAmount = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
+
         //f is to denote that is a float
         transform.Rotate(0, 0, -steerAmount);
         transform.Translate(0, moveAmount, 0);
